@@ -26,7 +26,7 @@
 		?>
 	</article><!-- .entry-content -->
 
-	<footer><span class="previous-next"><!-- Previous / Next page links -->
+	<footer class="bottom-nav"><span class="previous-next"><!-- Previous / Next page links -->
 	 <?php
 	 $pagelist = get_pages('sort_column=menu_order&sort_order=asc');
 	 $pages = array();
@@ -53,5 +53,5 @@
 	  </div><!-- .navigation for previous /next page links -->
 	</span></footer>
 
-	<?php edit_post_link( __( 'Edit', 'contemplative_fitness' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'contemplative_fitness' ), '<footer class="edit-link">', '</footer>' ); ?>
 </div><!-- container -->
