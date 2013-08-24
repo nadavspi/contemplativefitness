@@ -1,0 +1,192 @@
+@import "base";
+
+html { font-size: 10px; }
+
+body {
+    @include serif;
+    @include rem(font-size, 2.4rem);
+    line-height: 1.45;
+}
+
+.container {
+    @include outer-container;
+    @include rem(padding, 10.25rem 0);
+    @include media($tablet) {
+        @include rem(padding, 5rem 0);
+        max-width: 80%;
+    }
+    @include media($mobile) {
+        @include rem(padding, 1.5rem 0);
+        max-width: 85%;
+    }
+}
+
+p {
+    color: #36312a;
+    margin-bottom: 0;
+}
+
+p + p {
+  text-indent: 1.5em;
+  margin-top: 0 
+}
+
+h1 {
+    @include sans;
+}
+
+header h1 {
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+article h1 {
+    font-size: 1.125em;
+    font-weight: 400;
+    @include rem(margin-top, 7rem);
+}
+
+// nav
+
+.nav-inner {
+position: fixed;
+&:hover {
+    background-color: lighten(#ecfdff,2%);
+    @include transition (background-color 0.5s);
+    }   
+}
+
+.nav-outer a {
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    @include sans;
+    @include rem(font-size, 2rem);
+    &:hover {
+        color: #444;
+       @include transition (color 0.5s);
+    }
+}
+
+.toc  .nav-inner {
+    left: 0;
+    @include rem(width, 19rem);
+    top: 0;
+    @include rem(height, 19rem);
+    div {
+        @include rem(margin-top, 7rem);
+    }
+}
+
+.up .nav-inner {
+@include rem(left, 19rem);
+right: 0;
+top: 0;
+@include rem(height, 7.2rem);
+ }
+
+.prev .nav-inner {
+left: 0;
+@include rem(top, 19rem);
+@include rem(bottom, 22rem);
+@include rem(width, 10rem);
+div {
+    @include transform(rotate(-90deg));
+    margin-top: 25rem;
+}
+}
+
+
+.next .nav-inner {
+right: 0;
+@include rem(top, 19rem);
+@include rem(bottom, 22rem);
+@include rem(width, 10rem);
+div {
+    @include transform(rotate(90deg));
+    margin-top: 25rem;
+}
+}
+
+// wordpress 
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}

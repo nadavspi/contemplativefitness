@@ -18,11 +18,11 @@
 
 <?php wp_footer(); ?>
 
-<script type="text/javascript">
-$(document).ready(function(){
-  $('[data-slidepanel]').slidepanel({
-
-  });
+<script>
+$('body').flowtype({
+    maxFont: 24,
+    minimum: 500,
+    maximum: 1000
 });
 </script>
 

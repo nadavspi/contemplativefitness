@@ -6,13 +6,17 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-		<h2 class="subtitle"><?php the_subtitle(); ?></h2>
-	</header><!-- .entry-header -->
+<div class="container">
+	<header>
+		<h1><?php the_title(); ?></h1>
+		<?php 
+		/**
+		<h2 class="subtitle"><?php the_subtitle(); ?></h2> 
+		*/ 
+		?>
+	</header>
 
-	<div class="entry-content">
+	<article>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
@@ -20,9 +24,9 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</div><!-- .entry-content -->
+	</article><!-- .entry-content -->
 
-	<footer class="entry-meta"><span class="previous-next"><!-- Previous / Next page links -->
+	<footer><span class="previous-next"><!-- Previous / Next page links -->
 	 <?php
 	 $pagelist = get_pages('sort_column=menu_order&sort_order=asc');
 	 $pages = array();
@@ -50,4 +54,4 @@
 	</span></footer>
 
 	<?php edit_post_link( __( 'Edit', 'contemplative_fitness' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
-</article><!-- #post-## -->
+</div><!-- container -->

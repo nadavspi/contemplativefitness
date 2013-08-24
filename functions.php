@@ -112,7 +112,6 @@ function contemplative_fitness_scripts() {
 
 	wp_enqueue_script( 'Contemplative Fitness-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -123,11 +122,16 @@ function contemplative_fitness_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'contemplative_fitness_scripts' );
 
+function load_flowtype() {
+	wp_enqueue_script('flowtype', get_template_directory_uri() . '/js/flowtype.js');
+}
+add_action('wp_enqueue_scripts', 'load_flowtype');
+
 function load_fonts() {
-	wp_register_style('Gentium', 'http://fonts.googleapis.com/css?family=Gentium+Book+Basic');
-	wp_enqueue_style('Gentium');
-	wp_register_style('BreeSerif', 'http://fonts.googleapis.com/css?family=Bree+Serif');
-	wp_enqueue_style('BreeSerif');	
+	wp_register_style('OpenSans', 'http://fonts.googleapis.com/css?family=Open+Sans');
+	wp_enqueue_style('OpenSans');
+	wp_register_style('Lora', 'http://fonts.googleapis.com/css?family=Lora');
+	wp_enqueue_style('Lora');	
 }
 add_action('wp_enqueue_scripts', "load_fonts");
 

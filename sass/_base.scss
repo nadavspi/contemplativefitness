@@ -1,0 +1,14 @@
+@import "bourbon/bourbon";
+@import "grid-settings";
+@import "neat/neat";
+
+@import "rem";
+
+$base-font-size: 10px;
+
+@mixin sans {
+    font-family: 'Open Sans', sans-serif;
+}
+@mixin serif {
+    font-family: 'Lora', serif;
+}
