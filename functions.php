@@ -123,13 +123,6 @@ function contemplative_fitness_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'contemplative_fitness_scripts' );
 
-function slidepanel_scripts() {
-	// wp_enqueue_script('slidepanel', get_template_directory_uri() . '/js/jquery.slidepanel.js', array( 'jquery' ));
-	wp_enqueue_script('slidepanel', get_template_directory_uri() . '/js/jquery.slidepanel.js');
-	// wp_enqueue_style( 'slidepanel-style', get_template_directory_uri() . '/css/jquery.slidepanel.css' );
-}
-add_action('wp_enqueue_scripts', 'slidepanel_scripts');
-
 function load_fonts() {
 	wp_register_style('Gentium', 'http://fonts.googleapis.com/css?family=Gentium+Book+Basic');
 	wp_enqueue_style('Gentium');
