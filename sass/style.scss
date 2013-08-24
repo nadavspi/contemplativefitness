@@ -10,7 +10,7 @@ body {
 
 .container {
     @include outer-container;
-    @include rem(padding, 10.25rem 0);
+    @include rem(padding, 8.5rem 0);
     @include media($tablet) {
         @include rem(padding, 5rem 0);
         max-width: 80%;
@@ -56,22 +56,34 @@ article h1 {
     @include rem(margin-top, 7rem);
 }
 
-footer {
+.edit-link {
     @include sans;
     font-size: 0.8em;
+    @include rem(margin-top, 15rem);
 }
 
-.edit-link {
-    @include rem(margin-top, 15rem);
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
 }
 
 // nav
 
 .bottom-nav {
-    @include rem(padding-top, 0.33rem);
-    @include rem(margin-top, 4.5rem);
+    @include sans;
+    font-size: 0.75em;
+    padding-top: 0.5em;
+    margin-top: 2.5em;
     border-top: 2px solid #5e5e5e;
+    .toc {
+        text-align: center;
+        @include span-columns(12);
+    }
 }
+
 
 .nav-inner {
 position: fixed;

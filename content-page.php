@@ -26,7 +26,10 @@
 		?>
 	</article><!-- .entry-content -->
 
-	<footer class="bottom-nav"><span class="previous-next"><!-- Previous / Next page links -->
+	<nav class="bottom-nav"><!-- Previous / Next page links -->
+		<section class="toc">
+			<a href="#">Table of contents</a>
+		</section>
 	 <?php
 	 $pagelist = get_pages('sort_column=menu_order&sort_order=asc');
 	 $pages = array();
@@ -39,19 +42,21 @@
 	$nextID = $pages[$current+1];
 	?>
 
-	<div class="navigation">
 	 <?php if (!empty($prevID)) { ?>
-	 <div class="aligncenter">
+	 	<div class="float-left">
 	   <a href="<?php echo get_permalink($prevID); ?>"
-	     title="<?php echo get_the_title($prevID); ?>">&laquo; Previous</a>
+	     title="<?php echo get_the_title($prevID); ?>">&larr; <?php echo get_the_title($prevID); ?></a>
+	 	</div>
 	   <?php }
 	   if (!empty($nextID)) { ?>
-	     — <a href="<?php echo get_permalink($nextID); ?>" 
-	      title="<?php echo get_the_title($nextID); ?>">Next &raquo;</a>
-	    </div>
+	   <div class="float-right">
+	     <a href="<?php echo get_permalink($nextID); ?>" 
+	      title="<?php echo get_the_title($nextID); ?>"><?php echo get_the_title($nextID); ?> &rarr;</a> 
+	      
+	   </div>
 	    <?php } ?>
-	  </div><!-- .navigation for previous /next page links -->
-	</span></footer>
+
+	</nav>
 
 	<?php edit_post_link( __( 'Edit', 'contemplative_fitness' ), '<footer class="edit-link">', '</footer>' ); ?>
 </div><!-- container -->
