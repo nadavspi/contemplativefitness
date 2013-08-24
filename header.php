@@ -25,10 +25,6 @@ wp_enqueue_script('jquery');
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<div class="menu">
-	<a href="<?php echo site_url() . '/nav/'; ?>" 
-data-slidepanel="panel" class="menubutton panel">Table of Contents</a>
-</div>
 
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
