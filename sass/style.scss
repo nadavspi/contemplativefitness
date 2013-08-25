@@ -17,8 +17,6 @@ body {
     line-height: 1.45;
 }
 
-
-
 .container {
     @include outer-container;
     @include rem(padding-top, 8.5rem);
@@ -74,7 +72,6 @@ article h1,h2,h3,h4,h5 {
     font-weight: 400;
     @include rem(margin-top, 7rem);
 }
-
 
 
 // table of contents page
