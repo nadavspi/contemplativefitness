@@ -8,16 +8,10 @@
  */
 ?>
 
-</div><!-- #main -->
-
 <footer>
-   
-  </footer>
-
-</div><!-- #page -->
-
-<?php wp_footer(); ?>
-
+  <aside class="copyright">&copy; 2013 Kenneth Folk. All Rights Reserved.</aside>
+  <aside class="credit">Website by <a href="http://peaceofmindwebdesign.com">Nadav Spiegelman</a></aside>
+</footer>
 <script>
 $('body').flowtype({
     maxFont: 24,

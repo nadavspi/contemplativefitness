@@ -27,8 +27,8 @@
 	</article><!-- .entry-content -->
 
 	<nav class="bottom-nav"><!-- Previous / Next page links -->
-		<section class="toc">
-			<a href="#">Table of contents</a>
+		<section class="toc-link">
+			<a href="<?php echo home_url(); ?>">Table of contents</a>
 		</section>
 	 <?php
 	 $pagelist = get_pages('sort_column=menu_order&sort_order=asc');

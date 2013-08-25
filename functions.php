@@ -128,7 +128,7 @@ function load_flowtype() {
 add_action('wp_enqueue_scripts', 'load_flowtype');
 
 function load_fonts() {
-	wp_register_style('OpenSans', 'http://fonts.googleapis.com/css?family=Open+Sans');
+	wp_register_style('OpenSans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,700');
 	wp_enqueue_style('OpenSans');
 	wp_register_style('Lora', 'http://fonts.googleapis.com/css?family=Lora');
 	wp_enqueue_style('Lora');	

@@ -51,12 +51,17 @@ a {
     color: #3675a2;
     border: none; }
 
-h1 {
+h1, h2 {
   font-family: 'Open Sans', sans-serif; }
 
 header h1 {
   font-size: 1.3em;
-  font-weight: 400; }
+  font-weight: 400;
+  margin-bottom: 0.2em; }
+header h2 {
+  font-size: 0.9em;
+  font-weight: 400;
+  margin-top: 0; }
 
 article h1 {
   font-size: 1.125em;
@@ -64,17 +69,33 @@ article h1 {
   margin-top: 70px;
   margin-top: 7rem; }
 
-.edit-link {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 0.8em;
-  margin-top: 150px;
-  margin-top: 15rem; }
+.book-title h1 {
+  font-size: 1.6em;
+  font-weight: 700;
+  margin-bottom: 0.3em;
+  padding-top: 1em;
+  border-top: 0.3em solid #a55241; }
 
-.float-left {
-  float: left; }
+.toc {
+  list-style-type: none;
+  padding: 1em 0; }
+  .toc li {
+    margin-top: 2em;
+    font-size: 1.2em; }
+    .toc li:first-child {
+      margin-top: 0.5em; }
+    .toc li ul li {
+      font-size: 0.85em;
+      margin: 0.4em 0;
+      list-style-type: none; }
+  .toc .current_page_item {
+    display: none; }
 
-.float-right {
-  float: right; }
+.page_item a {
+  border: none;
+  color: #000; }
+  .page_item a:hover {
+    border-bottom: 2px solid #3f8abf; }
 
 .bottom-nav {
   font-family: 'Open Sans', sans-serif;
@@ -82,13 +103,13 @@ article h1 {
   padding-top: 0.5em;
   margin-top: 2.5em;
   border-top: 2px solid #5e5e5e; }
-  .bottom-nav .toc {
+  .bottom-nav .toc-link {
     text-align: center;
     display: block;
     float: left;
     margin-right: 2.35765%;
     width: 100%; }
-    .bottom-nav .toc:last-child {
+    .bottom-nav .toc-link:last-child {
       margin-right: 0; }
 
 .nav-inner {
@@ -162,6 +183,28 @@ article h1 {
     -o-transform: rotate(90deg);
     transform: rotate(90deg);
     margin-top: 25rem; }
+
+footer {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.65em; }
+
+.copyright {
+  margin: 0 0.5em 0 0.5em; }
+
+.credit {
+  margin: 0 0.5em 0.5em 0; }
+
+.edit-link {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8em;
+  margin-top: 150px;
+  margin-top: 15rem; }
+
+.float-left, .copyright {
+  float: left; }
+
+.float-right, .credit {
+  float: right; }
 
 .alignnone {
   margin: 5px 20px 20px 0; }

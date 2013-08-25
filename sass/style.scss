@@ -41,13 +41,21 @@ a {
     }
 }
 
-h1 {
+h1,h2 {
     @include sans;
 }
 
-header h1 {
-    font-size: 1.3em;
-    font-weight: 400;
+header {
+   h1 {
+        font-size: 1.3em;
+        font-weight: 400;
+        margin-bottom: 0.2em;
+    }
+    h2 {
+        font-size: 0.9em;
+        font-weight: 400;
+        margin-top: 0;
+    }
 }
 
 article h1 {
@@ -56,19 +64,46 @@ article h1 {
     @include rem(margin-top, 7rem);
 }
 
-.edit-link {
-    @include sans;
-    font-size: 0.8em;
-    @include rem(margin-top, 15rem);
+
+
+// table of contents page
+
+.book-title  {
+    h1 {
+        font-size: 1.6em;
+        font-weight: 700;
+        margin-bottom: 0.3em;
+        padding-top: 1em;
+        border-top: 0.3em solid #a55241;
+    }
 }
 
-.float-left {
-    float: left;
+.toc {
+    list-style-type: none;
+    padding: 1em 0;
+    li {
+        margin-top: 2em;
+        font-size: 1.2em;
+        &:first-child {
+            margin-top: 0.5em;
+        }
+        ul li {
+            font-size: 0.85em;
+            margin: 0.4em 0;
+            list-style-type: none;
+        }
+    }
+    .current_page_item { display: none; }
 }
 
-.float-right {
-    float: right;
+.page_item a {
+    border: none;
+    color: #000;
+    &:hover {
+        border-bottom: 2px solid #3f8abf;
+    }
 }
+
 
 // nav
 
@@ -78,7 +113,7 @@ article h1 {
     padding-top: 0.5em;
     margin-top: 2.5em;
     border-top: 2px solid #5e5e5e;
-    .toc {
+    .toc-link {
         text-align: center;
         @include span-columns(12);
     }
@@ -143,6 +178,39 @@ div {
     @include transform(rotate(90deg));
     margin-top: 25rem;
 }
+}
+
+// footer
+
+footer {
+    @include sans;
+    font-size: 0.65em;
+}
+
+.copyright {
+    @extend .float-left;
+    margin: 0 0.5em 0 0.5em; 
+}
+
+.credit {
+    @extend .float-right;
+     margin: 0 0.5em 0.5em 0;
+}
+
+// helpers & misc
+
+.edit-link {
+    @include sans;
+    font-size: 0.8em;
+    @include rem(margin-top, 15rem);
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
 }
 
 // wordpress 
