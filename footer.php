@@ -10,6 +10,7 @@
 <div class="nav-outer toc"><a href="<?php echo home_url(); ?>"><div class="nav-inner"></div></a></div>
 
 </div> <!-- wrap -->
+
 <footer>
   <aside class="copyright">&copy; 2013 Kenneth Folk. All Rights Reserved.</aside>
   <aside class="credit">Website by <a href="http://peaceofmindwebdesign.com">Nadav Spiegelman</a></aside>

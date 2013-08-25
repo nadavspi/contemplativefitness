@@ -1,19 +1,23 @@
 @import "base";
 
-// * {margin:0;padding:0;} 
+$footer-height: 38px;
+$footer-height-mobile: 23px;
 
-html { font-size: 10px; height: 100%; }
+html, body {
+    margin:0;
+    padding:0;
+    height: 100%;
+} 
+
+html { font-size: 10px; }
 
 body {
     @include serif;
     @include rem(font-size, 2.4rem);
     line-height: 1.45;
-    height: 100%;
 }
 
-.wrap {
-    min-height: 100%;
-}
+
 
 .container {
     @include outer-container;
@@ -65,7 +69,7 @@ header {
     }
 }
 
-article h1 {
+article h1,h2,h3,h4,h5 {
     font-size: 1.125em;
     font-weight: 400;
     @include rem(margin-top, 7rem);
@@ -122,15 +126,15 @@ article h1 {
     border-top: 2px solid #5e5e5e;
     a {
         border: none;
+        &:hover {
+            border-bottom: 2px solid #3f8abf;
+        }
     }
 }
 
 .toc-link {
-    text-align: center;
+    margin-top: 0.7em;
     @include span-columns(12);
-    a {
-        border: none;
-    }
 }
 
 .nav-inner {
@@ -173,10 +177,43 @@ div {
 
 // footer
 
+.container {
+    overflow: auto;
+    padding-bottom: $footer-height;
+    @include media($tablet) {
+        padding-bottom: $footer-height-mobile;
+    }
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+}
+
+
 footer {
     @include sans;
     font-size: 0.65em;
+    position: relative;
+    height: $footer-height;
+    margin-top: -$footer-height;
+    @include media($tablet) {
+        height: $footer-height-mobile;
+        margin-top: -$footer-height-mobile;
+    }
+    clear:both;  
 }
+
+/*Opera Fix*/
+body:before {
+    content:"";
+    height:100%;
+    float:left;
+    width:0;
+    margin-top:-32767px;
+}
+
 
 .copyright {
     @extend .float-left;

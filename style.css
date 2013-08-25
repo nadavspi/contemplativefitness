@@ -3,19 +3,19 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-html {
-  font-size: 10px;
+html, body {
+  margin: 0;
+  padding: 0;
   height: 100%; }
+
+html {
+  font-size: 10px; }
 
 body {
   font-family: 'Lora', serif;
   font-size: 24px;
   font-size: 2.4rem;
-  line-height: 1.45;
-  height: 100%; }
-
-.wrap {
-  min-height: 100%; }
+  line-height: 1.45; }
 
 .container {
   *zoom: 1;
@@ -69,7 +69,7 @@ header {
     font-weight: 400;
     margin-top: 0; }
 
-article h1 {
+article h1, h2, h3, h4, h5 {
   font-size: 1.125em;
   font-weight: 400;
   margin-top: 70px;
@@ -111,17 +111,17 @@ article h1 {
   border-top: 2px solid #5e5e5e; }
   .bottom-nav a {
     border: none; }
+    .bottom-nav a:hover {
+      border-bottom: 2px solid #3f8abf; }
 
 .toc-link {
-  text-align: center;
+  margin-top: 0.7em;
   display: block;
   float: left;
   margin-right: 2.35765%;
   width: 100%; }
   .toc-link:last-child {
     margin-right: 0; }
-  .toc-link a {
-    border: none; }
 
 .nav-inner {
   position: fixed; }
@@ -165,9 +165,37 @@ article h1 {
     transform: rotate(90deg);
     margin-top: 25rem; }
 
+.container {
+  overflow: auto;
+  padding-bottom: 38px; }
+  @media screen and (max-width: 768px) {
+    .container {
+      padding-bottom: 23px; } }
+
+.wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%; }
+
 footer {
   font-family: 'Open Sans', sans-serif;
-  font-size: 0.65em; }
+  font-size: 0.65em;
+  position: relative;
+  height: 38px;
+  margin-top: -38px;
+  clear: both; }
+  @media screen and (max-width: 768px) {
+    footer {
+      height: 23px;
+      margin-top: -23px; } }
+
+/*Opera Fix*/
+body:before {
+  content: "";
+  height: 100%;
+  float: left;
+  width: 0;
+  margin-top: -32767px; }
 
 .copyright {
   margin: 0 0.5em 0 0.5em; }

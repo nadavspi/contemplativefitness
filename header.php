@@ -17,8 +17,12 @@ wp_deregister_script('jquery');
 wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'); 
 wp_enqueue_script('jquery'); 
 ?>
-
 <?php wp_head(); ?>
+<!--[if !IE 7]>
+  <style type="text/css">
+    #wrap {display:table;height:100%}
+  </style>
+<![endif]-->
 </head>
 
 <body>
