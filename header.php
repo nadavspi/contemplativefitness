@@ -22,3 +22,4 @@ wp_enqueue_script('jquery');
 </head>
 
 <body>
+  <div class="wrap">

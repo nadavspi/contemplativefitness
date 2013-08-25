@@ -1,22 +1,29 @@
 @import "base";
 
-html { font-size: 10px; }
+// * {margin:0;padding:0;} 
+
+html { font-size: 10px; height: 100%; }
 
 body {
     @include serif;
     @include rem(font-size, 2.4rem);
     line-height: 1.45;
+    height: 100%;
+}
+
+.wrap {
+    min-height: 100%;
 }
 
 .container {
     @include outer-container;
-    @include rem(padding, 8.5rem 0);
+    @include rem(padding-top, 8.5rem);
     @include media($tablet) {
-        @include rem(padding, 5rem 0);
+        @include rem(padding-top, 5rem);
         max-width: 80%;
     }
     @include media($mobile) {
-        @include rem(padding, 1.5rem 0);
+        @include rem(padding-top, 1.5rem);
         max-width: 85%;
     }
 }
@@ -36,7 +43,6 @@ a {
     text-decoration: none;
     border-bottom: 2px solid #3f8abf;
     &:hover {
-        color: darken(#3f8abf, 7.5%);
         border: none;
     }
 }
@@ -46,6 +52,7 @@ h1,h2 {
 }
 
 header {
+    margin-bottom: 2em;
    h1 {
         font-size: 1.3em;
         font-weight: 400;
@@ -82,7 +89,7 @@ article h1 {
     list-style-type: none;
     padding: 1em 0;
     li {
-        margin-top: 2em;
+        margin-top: 1.8em;
         font-size: 1.2em;
         &:first-child {
             margin-top: 0.5em;
@@ -113,45 +120,29 @@ article h1 {
     padding-top: 0.5em;
     margin-top: 2.5em;
     border-top: 2px solid #5e5e5e;
-    .toc-link {
-        text-align: center;
-        @include span-columns(12);
+    a {
+        border: none;
     }
 }
 
+.toc-link {
+    text-align: center;
+    @include span-columns(12);
+    a {
+        border: none;
+    }
+}
 
 .nav-inner {
 position: fixed;
-&:hover {
-    background-color: lighten(#ecfdff,2%);
-    @include transition (background-color 0.5s);
-    }   
+// &:hover {
+//     background-color: lighten(#ecfdff,2%);
+//     @include transition (background-color 0.5s);
+//     }   
 }
 
-.nav-outer a {
-    margin: auto;
-    text-align: center;
-    color: #fff;
-    @include sans;
-    @include rem(font-size, 2rem);
-    &:hover {
-        color: #444;
-       @include transition (color 0.5s);
-    }
-}
-
-.toc  .nav-inner {
-    left: 0;
-    @include rem(width, 19rem);
-    top: 0;
-    @include rem(height, 19rem);
-    div {
-        @include rem(margin-top, 7rem);
-    }
-}
-
-.up .nav-inner {
-@include rem(left, 19rem);
+.toc .nav-inner {
+left: 0;
 right: 0;
 top: 0;
 @include rem(height, 7.2rem);
@@ -198,12 +189,6 @@ footer {
 }
 
 // helpers & misc
-
-.edit-link {
-    @include sans;
-    font-size: 0.8em;
-    @include rem(margin-top, 15rem);
-}
 
 .float-left {
     float: left;
